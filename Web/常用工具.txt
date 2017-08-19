@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+一、JS工具
+1、校验器
+JSLint、JSHint、javascript Lint
+2、压缩器
+Dojo ShrinkSafe、YUI Compressor
+3、单元测试
+JSUint、YUI Test、DOH、qUint
+4、文档生成器
+JsDoc Toolkit、YUI Doc、
+二、CSS工具
+1、浏览器兼容
+prefix free
+2、统一样式
+Normalize
+3、压缩
+Grunt
+三、优秀的css框架
+阿里巴巴的alice、网易的NEC、百度的GMU、h+
+=======
+一、JS工具
+1、校验器
+JSLint、JSHint、javascript Lint
+2、压缩器
+Dojo ShrinkSafe、YUI Compressor
+3、单元测试
+JSUint、YUI Test、DOH、qUint
+4、文档生成器
+JsDoc Toolkit、YUI Doc、
+二、CSS工具
+1、浏览器兼容
+prefix free
+2、统一样式
+Normalize
+3、压缩
+Grunt
+三、优秀的css框架
+阿里巴巴的alice、网易的NEC、百度的GMU、h+
+>>>>>>> e7623872d3413551c724edc5a62880236c0950c5
+四、node.js Thinkjs

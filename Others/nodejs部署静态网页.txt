@@ -1,0 +1,11 @@
+﻿1、node.js安装
+http://nodejs.cn/download/
+node –v测试安装是否成功
+2、gulp的安装       
+npm install
+npm install gulp -g
+3、http-server安装  
+npm install http-server -g
+4、运行
+进入父目录，运行
+http-server -p 80 --cors

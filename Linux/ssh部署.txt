@@ -1,0 +1,13 @@
+
+http://app.yueyuan.pro/yueyuan-admin/html
+帐号:majianyuan,密码yueyuan1234
+
+使用git bash
+ssh
+传文件 scp ROOT.war yueyuan@101.37.30.215:/usr/tomcat/apache-tomcat-8.5.11/webapps
+登录  ssh yueyuan@101.37.30.215
+root:@Y!y$w&L$90()cG3%
+git bash
+ssh
+传文件 scp ROOT.war yueyuan@101.37.30.215:/usr/tomcat/apache-tomcat-8.5.11/webapps
+登录  ssh yueyuan@101.37.30.215

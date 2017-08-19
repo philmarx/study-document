@@ -1,0 +1,25 @@
+﻿常用的网络模式为桥接模式和NAT模式，桥接模式
+
+点击VMware右下角网络图标，选择NAT模式(相当于在本机内部建立一个局域网，不和其它机器的IP冲突，并且可以上网)
+
+在VMware中的菜单栏，点击编辑->在选项卡中选中NAT模式->在Vnet中勾选（NET模式、将主机虚拟适配器连接到此网络、使用本地DHCP服务将IP地址分配给虚拟机）
+->点击DHCP设置(查看子网掩码、网关，IP地址的范围，用于修改文件)；
+
+
+cd /etc/sysconfig/network-scripts
+ip addr查看网卡为ens33
+cp ifcfg-ens33 ifcfg-ens33.bak 
+vi ifcfg-ens33
+内容如下
+DEVICE=ens33
+BOOTPROTO=static
+NM_CONTROLLED=yes
+ONBOOT=YES
+TYPE=Ethernet
+IPADDR=192.168.140.131 //IP地址
+NETMASK=255.255.255.0  //子网掩码
+GATEWAY=192.168.140.2  //网关
+DNS1=218.108.248.200  //杭州市电信DNS
+:wq
+systemctl restart network
+

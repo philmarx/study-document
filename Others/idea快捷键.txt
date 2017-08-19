@@ -1,0 +1,6 @@
+﻿自动对齐：ctrl+alt+L
+删除整行：ctrl+X
+复制整行：ctrl+D
+Shift+F6  重构-重命名
+没有集成JDK
+点击菜单栏File-Project Structure设置Project SDK

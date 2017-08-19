@@ -1,0 +1,109 @@
+<<<<<<< HEAD
+﻿
+--用SYSDBA身份登录后修改其他用户的密码
+alter user test identified by "111111"
+
+
+-- 创建自动同步计划(SQL窗口)
+BEGIN
+sys.dbms_scheduler.create_job( 
+job_name => '"test"."JOB_SYNC_BASE"',
+job_type => 'PLSQL_BLOCK',
+job_action => 'BEGIN
+PRO_GET_BASE_ORG_DATA();
+PRO_GET_BASE_MAJOR_DATA();
+PRO_GET_BASE_CLASSROOM_DATA();
+PRO_GET_BASE_USER_TEA_DATA();
+PRO_GET_BASE_USER_STU_DATA();
+PRO_GET_BASE_COURSE_DATA();
+END;',
+repeat_interval => 'FREQ=DAILY;BYHOUR=4;BYMINUTE=0',
+start_date => systimestamp at time zone '+8:00',
+job_class => 'DEFAULT_JOB_CLASS',
+auto_drop => FALSE,
+enabled => TRUE);
+END;
+
+--设置任务隔一周运行一次，并且仅在周5运行：
+FREQ=WEEKLY; INTERVAL=2; BYDAY=FRI;  
+
+
+
+--启用(命令窗口)
+exec dbms_scheduler.enable ('JOB_SYNC_BASE');
+
+--查看JOB状态
+select * from USER_SCHEDULER_JOB_LOG;
+select * from USER_SCHEDULER_JOB_RUN_DETAILS;
+
+select owner, job_name, state from dba_scheduler_jobs;
+select job_name, state from user_scheduler_jobs;
+
+SELECT * FROM user_jobs;
+SELECT * FROM dba_jobs;
+
+
+--删除JOB
+BEGIN
+DBMS_SCHEDULER.DROP_JOB (
+   job_name    =>  'JOB_SYNC_BASE');
+END;
+
+--清空回收站
+purge recyclebin
+
+=======
+﻿
+--用SYSDBA身份登录后修改其他用户的密码
+alter user test identified by "111111"
+
+
+-- 创建自动同步计划(SQL窗口)
+BEGIN
+sys.dbms_scheduler.create_job( 
+job_name => '"test"."JOB_SYNC_BASE"',
+job_type => 'PLSQL_BLOCK',
+job_action => 'BEGIN
+PRO_GET_BASE_ORG_DATA();
+PRO_GET_BASE_MAJOR_DATA();
+PRO_GET_BASE_CLASSROOM_DATA();
+PRO_GET_BASE_USER_TEA_DATA();
+PRO_GET_BASE_USER_STU_DATA();
+PRO_GET_BASE_COURSE_DATA();
+END;',
+repeat_interval => 'FREQ=DAILY;BYHOUR=4;BYMINUTE=0',
+start_date => systimestamp at time zone '+8:00',
+job_class => 'DEFAULT_JOB_CLASS',
+auto_drop => FALSE,
+enabled => TRUE);
+END;
+
+--设置任务隔一周运行一次，并且仅在周5运行：
+FREQ=WEEKLY; INTERVAL=2; BYDAY=FRI;  
+
+
+
+--启用(命令窗口)
+exec dbms_scheduler.enable ('JOB_SYNC_BASE');
+
+--查看JOB状态
+select * from USER_SCHEDULER_JOB_LOG;
+select * from USER_SCHEDULER_JOB_RUN_DETAILS;
+
+select owner, job_name, state from dba_scheduler_jobs;
+select job_name, state from user_scheduler_jobs;
+
+SELECT * FROM user_jobs;
+SELECT * FROM dba_jobs;
+
+
+--删除JOB
+BEGIN
+DBMS_SCHEDULER.DROP_JOB (
+   job_name    =>  'JOB_SYNC_BASE');
+END;
+
+--清空回收站
+purge recyclebin
+
+>>>>>>> e7623872d3413551c724edc5a62880236c0950c5

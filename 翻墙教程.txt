@@ -1,0 +1,8 @@
+下载green vpn安装后运行
+http://green.yxi99.com/
+
+从laoD博客下载hosts
+https://laod.cn/
+替换hosts
+运行cmd
+ipconfig /flushdns
